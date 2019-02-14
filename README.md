@@ -1,1 +1,2 @@
-# projet_web_2019
+# Projet Web 2019
+Morgane Figard
