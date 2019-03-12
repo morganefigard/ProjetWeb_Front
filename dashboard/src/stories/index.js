@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Button } from '@storybook/react/demo';
 import 'bootstrap/dist/css/bootstrap.css';
+import Stats from '../components/Stats';
 
 storiesOf('Button', module)
   .add('with text', () => (
@@ -10,3 +11,7 @@ storiesOf('Button', module)
   .add('with some emoji', () => (
     <Button><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
   ));   
+
+storiesOf('Stats', module).add('Stats with icon', () => (
+  <Stats></Stats>
+));
