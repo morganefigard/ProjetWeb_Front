@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Button } from '@storybook/react/demo';
 import 'bootstrap/dist/css/bootstrap.css';
 import Stats from '../components/Stats';
+import DateTime from '../components/DateTime';
 
 storiesOf('Button', module)
   .add('with text', () => (
@@ -14,4 +15,8 @@ storiesOf('Button', module)
 
 storiesOf('Stats', module).add('Stats with icon', () => (
   <Stats></Stats>
+));
+
+storiesOf('Time', module).add('Date and clock', () => (
+  <DateTime></DateTime>
 ));
