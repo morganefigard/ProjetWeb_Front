@@ -1,3 +1,4 @@
+import './DateTime.css';
 import React, { Component } from 'react';
 import Clock from 'react-live-clock';
 
@@ -37,7 +38,7 @@ export default class DateTime extends Component {
 
     render() {
     return (
-        <div>
+        <div className="DateTime">
             <p><big>{this.state.date}</big></p>
             <h1 class="display-4">
                 <strong>

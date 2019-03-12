@@ -1,0 +1,16 @@
+.DateTime {
+    background-color: #fffae3;
+    color: #5d576b;
+    padding: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 0px;
+}
