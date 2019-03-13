@@ -6,6 +6,7 @@ import Stats from '../components/Stats';
 import DateTime from '../components/DateTime';
 import WeatherLocation from '../components/WeatherLocation';
 import BarChartWidget from '../components/BarChartWidget';
+import PieChartWidget from '../components/PieChartWidget';
 
 storiesOf('Button', module)
   .add('with text', () => (
@@ -29,4 +30,7 @@ storiesOf('Small widgets', module)
 storiesOf('Charts', module)
   .add('Bar chart', () => (
     <BarChartWidget></BarChartWidget>
-  ));  
+  ))
+  .add('Pie chart', () => (
+    <PieChartWidget></PieChartWidget>
+  ));   
