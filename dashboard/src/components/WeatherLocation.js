@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ReactAnimatedWeather from 'react-animated-weather';
 
 export default class WeatherLocation extends Component {
     constructor() {
         super();
 
         this.state = {
-            outside_temp: null
+            outside_temp: null,
+            icon_id: null,
+            icon: null,
+            color: 'goldenrod',
+            size: 100,
+            animate: true
         };
     }
 
@@ -15,7 +21,50 @@ export default class WeatherLocation extends Component {
             var outside_temp = data.main.temp - 273.15; //get the temperature in degrees celcius
             outside_temp = Math.round(outside_temp);
             console.log(data);
+
+            var icon_id = data.weather[0].icon;
+            console.log("Icon id: " + icon_id);
+            var icon = "";
+            switch(icon_id) {
+                case "01d":
+                    icon = "CLEAR_DAY";
+                    break;
+                case "01n":
+                    icon = "CLEAR_NIGHT";
+                    break;
+                case "02d":
+                    icon = "PARTLY_CLOUDY_DAY";
+                    break;
+                case "02n":
+                    icon = "PARTLY_CLOUDY_NIGHT";
+                    break;
+                case "03d":
+                case "03n":
+                case "04d":
+                case "04n":
+                    icon = "CLOUDY";
+                    break;
+                case "09d":
+                case "09n":
+                case "10d":
+                case "10n":
+                case "11d":
+                case "11n":
+                    icon = "RAIN";
+                    break;
+                case "13d":
+                case "13n":
+                    icon = "SNOW";
+                    break;
+                case "50d":
+                case "50n":
+                    icon = "FOG";
+                    break;
+            }
+            console.log("Icon: " + icon);
             this.setState({ outside_temp });
+            this.setState({ icon_id });
+            this.setState({ icon });
           })
           .catch(console.error);
     }
@@ -24,6 +73,7 @@ export default class WeatherLocation extends Component {
         return (
             <div>
                 <p>Outside temperature is {this.state.outside_temp}</p>
+                <ReactAnimatedWeather icon={this.state.icon} color={this.state.color} size={this.state.size} animate={this.state.animate}/>
             </div>
         )
     }
