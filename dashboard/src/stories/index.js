@@ -4,6 +4,7 @@ import { Button } from '@storybook/react/demo';
 import 'bootstrap/dist/css/bootstrap.css';
 import Stats from '../components/Stats';
 import DateTime from '../components/DateTime';
+import WeatherLocation from '../components/WeatherLocation';
 
 storiesOf('Button', module)
   .add('with text', () => (
@@ -19,4 +20,7 @@ storiesOf('Small widgets', module)
   ))
   .add('Date and clock', () => (
     <DateTime></DateTime>
+  ))
+  .add('Weather', () => (
+    <WeatherLocation></WeatherLocation>
   ));
