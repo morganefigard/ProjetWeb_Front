@@ -13,10 +13,10 @@ storiesOf('Button', module)
     <Button><span role="img" aria-label="so cool">😀 😎 👍 💯</span></Button>
   ));   
 
-storiesOf('Stats', module).add('Stats with icon', () => (
-  <Stats></Stats>
-));
-
-storiesOf('Time', module).add('Date and clock', () => (
-  <DateTime></DateTime>
-));
+storiesOf('Small widgets', module)
+  .add('Stats with icon', () => (
+    <Stats></Stats>
+  ))
+  .add('Date and clock', () => (
+    <DateTime></DateTime>
+  ));
