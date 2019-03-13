@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Stats from '../components/Stats';
 import DateTime from '../components/DateTime';
 import WeatherLocation from '../components/WeatherLocation';
+import LineChartWidget from '../components/LineChartWidget';
 
 storiesOf('Button', module)
   .add('with text', () => (
@@ -24,3 +25,8 @@ storiesOf('Small widgets', module)
   .add('Weather', () => (
     <WeatherLocation></WeatherLocation>
   ));
+
+storiesOf('Charts', module)
+  .add('Line chart', () => (
+    <LineChartWidget></LineChartWidget>
+  ));  
