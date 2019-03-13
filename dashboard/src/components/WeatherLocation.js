@@ -12,7 +12,7 @@ export default class WeatherLocation extends Component {
             icon_id: null,
             icon: null,
             color: '#fcfcfc',
-            size: 70,
+            size: 60,
             animate: true
         };
     }
@@ -73,8 +73,7 @@ export default class WeatherLocation extends Component {
     render() {
         return (
             <div className="WeatherLocation">
-                <p><big>Temperature: <strong>{this.state.outside_temp}°C</strong></big></p>
-                <ReactAnimatedWeather icon={this.state.icon} color={this.state.color} size={this.state.size} animate={this.state.animate}/>
+                <h1 class="display-4"><strong>{this.state.outside_temp}°C </strong><ReactAnimatedWeather icon={this.state.icon} color={this.state.color} size={this.state.size} animate={this.state.animate}/></h1>
                 <p>Paris, France</p>
             </div>
         )
