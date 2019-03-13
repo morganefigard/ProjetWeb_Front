@@ -1,0 +1,16 @@
+.WeatherLocation {
+    background-color: #99e1d9;
+    color: #fcfcfc;
+    padding: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 10px;
+}

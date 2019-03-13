@@ -1,3 +1,4 @@
+import './WeatherLocation.css';
 import React, { Component } from 'react';
 import axios from 'axios';
 import ReactAnimatedWeather from 'react-animated-weather';
@@ -10,8 +11,8 @@ export default class WeatherLocation extends Component {
             outside_temp: null,
             icon_id: null,
             icon: null,
-            color: 'goldenrod',
-            size: 100,
+            color: '#fcfcfc',
+            size: 70,
             animate: true
         };
     }
@@ -71,9 +72,10 @@ export default class WeatherLocation extends Component {
 
     render() {
         return (
-            <div>
-                <p>Outside temperature is {this.state.outside_temp}</p>
+            <div className="WeatherLocation">
+                <p><big>Temperature: <strong>{this.state.outside_temp}°C</strong></big></p>
                 <ReactAnimatedWeather icon={this.state.icon} color={this.state.color} size={this.state.size} animate={this.state.animate}/>
+                <p>Paris, France</p>
             </div>
         )
     }
