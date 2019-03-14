@@ -8,6 +8,7 @@ import WeatherLocation from '../components/WeatherLocation';
 import BarChartWidget from '../components/BarChartWidget';
 import PieChartWidget from '../components/PieChartWidget';
 import ProgressBarsWidget from '../components/ProgressBarsWidget';
+import Navbar from '../components/Navbarsss';
 
 storiesOf('Button', module)
   .add('with text', () => (
@@ -38,3 +39,8 @@ storiesOf('Charts', module)
   .add('Progress bars', () => (
     <ProgressBarsWidget></ProgressBarsWidget>
   ));  
+
+storiesOf('Nav', module)
+  .add('Navbar', () => (
+    <Navbar></Navbar>
+  ));

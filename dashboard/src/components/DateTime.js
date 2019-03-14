@@ -39,8 +39,8 @@ export default class DateTime extends Component {
     render() {
     return (
         <div className="DateTime">
-            <p class="no-margin-bottom"><big>{this.state.date}</big></p>
-            <h1 class="display-4">
+            <p className="no-margin-bottom"><big>{this.state.date}</big></p>
+            <h1 className="display-4">
                 <strong>
                 <Clock format={'HH:mm:ss'} ticking={true} timezone={'Europe/Paris'} />
                 </strong>
