@@ -11,6 +11,6 @@
     text-align: center;
 }
 
-p {
+.no-margin-bottom {
     margin-bottom: 0px;
 }

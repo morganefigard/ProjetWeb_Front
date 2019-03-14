@@ -74,7 +74,7 @@ export default class WeatherLocation extends Component {
         return (
             <div className="WeatherLocation">
                 <h1 class="display-4"><strong>{this.state.outside_temp}°C </strong><ReactAnimatedWeather icon={this.state.icon} color={this.state.color} size={this.state.size} animate={this.state.animate}/></h1>
-                <p>Paris, France</p>
+                <p class="no-margin-bottom">Paris, France</p>
             </div>
         )
     }

@@ -1,0 +1,29 @@
+.progress-bar-custom {
+    background-color: #99e1d9 !important;
+}
+
+.progress-bar-text {
+    text-align: right;
+    color: #fcfcfc;
+    font-weight: bold;
+}
+
+.progress {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ProgressBarsWidget {
+    background-color: #fcfcfc;
+    padding: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+}
+
+.graph-title {
+    color: #5d576b;
+}
