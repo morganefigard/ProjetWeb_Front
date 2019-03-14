@@ -7,6 +7,7 @@ import DateTime from '../components/DateTime';
 import WeatherLocation from '../components/WeatherLocation';
 import BarChartWidget from '../components/BarChartWidget';
 import PieChartWidget from '../components/PieChartWidget';
+import ProgressBarsWidget from '../components/ProgressBarsWidget';
 
 storiesOf('Button', module)
   .add('with text', () => (
@@ -33,4 +34,7 @@ storiesOf('Charts', module)
   ))
   .add('Pie chart', () => (
     <PieChartWidget></PieChartWidget>
-  ));   
+  ))
+  .add('Progress bars', () => (
+    <ProgressBarsWidget></ProgressBarsWidget>
+  ));  
