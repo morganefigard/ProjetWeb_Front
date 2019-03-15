@@ -10,7 +10,7 @@ export default class Stats extends Component {
         <h1 class="display-4">
             <strong>250 275</strong><br />
         </h1>
-        <p>Active customers <FontAwesomeIcon icon={faUsers} /></p>
+        <p>Active users <FontAwesomeIcon icon={faUsers} /></p>
       </div>
     )
   }

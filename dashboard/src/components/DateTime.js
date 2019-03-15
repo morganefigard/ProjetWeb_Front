@@ -32,14 +32,16 @@ export default class DateTime extends Component {
         var date = days[today.getDay()] + ', ' + months[today.getMonth()] + ' ' + today.getDate();
 
         this.state = {
-            date: date
+            date: date,
+            today: today
         };
     }
 
     render() {
     return (
         <div className="DateTime">
-            <p className="no-margin-bottom"><big>{this.state.date}</big></p>
+            <p className="no-margin-bottom no-show-small"><big>{this.state.date}</big></p>
+            <p className="no-margin-bottom show-small"><big>{this.state.today.getDate()}/{this.state.today.getMonth() + 1}/{this.state.today.getFullYear()}</big></p>
             <h1 className="display-4">
                 <strong>
                 <Clock format={'HH:mm:ss'} ticking={true} timezone={'Europe/Paris'} />

@@ -10,7 +10,7 @@ export default class ProgressBarsWidget extends Component {
             <table class="table table-hover">
             <tbody>
                 <tr>
-                    <td style={{width: 16.66 + '%'}}>
+                    <td style={{width: 26.66 + '%'}}>
                         Song A
                     </td>
                     <td>
@@ -22,7 +22,7 @@ export default class ProgressBarsWidget extends Component {
                     </td>
                 </tr>
                 <tr>
-                    <td style={{width: 16.66 + '%'}}>
+                    <td style={{width: 26.66 + '%'}}>
                         Song B
                     </td>
                     <td>

@@ -73,7 +73,8 @@ export default class WeatherLocation extends Component {
     render() {
         return (
             <div className="WeatherLocation">
-                <h1 class="display-4"><strong>{this.state.outside_temp}°C </strong><ReactAnimatedWeather icon={this.state.icon} color={this.state.color} size={this.state.size} animate={this.state.animate}/></h1>
+                <h1 class="display-4 no-show-small"><strong>{this.state.outside_temp}°C </strong><ReactAnimatedWeather icon={this.state.icon} color={this.state.color} size={this.state.size} animate={this.state.animate} /></h1>
+                <h1 class="display-4 show-small"><strong>{this.state.outside_temp}°C </strong></h1>
                 <p class="no-margin-bottom">Paris, France</p>
             </div>
         )
