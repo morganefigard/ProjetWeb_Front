@@ -8,7 +8,7 @@ import WeatherLocation from '../components/WeatherLocation';
 import BarChartWidget from '../components/BarChartWidget';
 import PieChartWidget from '../components/PieChartWidget';
 import ProgressBarsWidget from '../components/ProgressBarsWidget';
-import Navbar from '../components/Navbarsss';
+import NavbarHeader from '../components/NavbarHeader';
 
 storiesOf('Button', module)
   .add('with text', () => (
@@ -42,5 +42,5 @@ storiesOf('Charts', module)
 
 storiesOf('Nav', module)
   .add('Navbar', () => (
-    <Navbar></Navbar>
+    <NavbarHeader></NavbarHeader>
   ));

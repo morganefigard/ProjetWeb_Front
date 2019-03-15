@@ -10,7 +10,8 @@ import {
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
-    DropdownItem } from 'reactstrap';
+    DropdownItem,
+    Container } from 'reactstrap';
 
 export default class Navbarsss extends Component {
   constructor(props) {
@@ -30,6 +31,7 @@ export default class Navbarsss extends Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
+        <Container>
           <NavbarBrand href="/">Projet Web 2019: Dashboard</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -52,6 +54,7 @@ export default class Navbarsss extends Component {
               </UncontrolledDropdown>
             </Nav>
           </Collapse>
+          </Container>
         </Navbar>
       </div>
     );
