@@ -1,0 +1,5 @@
+.ArtistsList::before {
+    color: #aaa;
+    font-weight: 500;
+    content: 'LIST OF ALL ARTISTS';
+}
