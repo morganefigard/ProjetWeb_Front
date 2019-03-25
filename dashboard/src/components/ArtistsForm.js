@@ -1,8 +1,18 @@
 import React, { Component } from 'react'
-import { Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import './ArtistsForm.css'
 
 export default class ArtistsForm extends Component {
+    constructor() {
+        super();
+
+        this.addArtist = this.addArtist.bind(this);
+    }
+
+    addArtist() {
+        console.log("Button to add artist clicked");
+    }
+
     render() {
     return (
       <div className="ArtistsForm">
@@ -19,6 +29,7 @@ export default class ArtistsForm extends Component {
                 <Label for="followers">Number of followers</Label>
                 <Input type="number" name="followers" id="followers" />
             </FormGroup>
+            <Button onClick={this.addArtist}>Add an artist</Button>
         </Form>
       </div>
     )
