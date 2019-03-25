@@ -8,21 +8,35 @@ export default class ArtistsForm extends Component {
 
         this.state = {
             visible: false,
-            artistName: "Lady Gaga"
+            artistNameValue: '',
+            artistNameAlert: ''
           };
       
         this.onDismiss = this.onDismiss.bind(this);
         this.addArtist = this.addArtist.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.updateNameValue = this.updateNameValue.bind(this);
+    }
+
+    handleSubmit() {
+        if(this.state.artistNameValue != '') {
+            this.setState({ artistNameAlert: this.state.artistNameValue });
+            this.setState({ visible: true });
+        }
     }
 
     addArtist() {
-        console.log("Button to add artist clicked");
-        this.setState({ visible: false });
-        this.setState({ visible: true });
+        console.log("Adding an artist");
     }
     
     onDismiss() {
         this.setState({ visible: false });
+    }
+
+    updateNameValue(evt) {
+        this.setState({
+          artistNameValue: evt.target.value
+        });
     }
 
     render() {
@@ -31,7 +45,7 @@ export default class ArtistsForm extends Component {
         <Form>
             <FormGroup>
                 <Label for="name">Name of the artist</Label>
-                <Input type="text" name="name" id="name" placeholder="Ex. : Bob Marley" />
+                <Input type="text" name="name" id="name" placeholder="Ex. : Bob Marley" value={this.state.artistNameValue} onChange={this.updateNameValue} />
             </FormGroup>
             <FormGroup>
                 <Label for="birth">Birth date</Label>
@@ -42,11 +56,11 @@ export default class ArtistsForm extends Component {
                 <Input type="number" name="followers" id="followers" />
             </FormGroup>
             <FormGroup>
-                <Button onClick={this.addArtist}>Add an artist</Button>
+                <Button onClick={this.handleSubmit}>Add an artist</Button>
             </FormGroup>
             <FormGroup>
                 <Alert color="success" isOpen={this.state.visible} toggle={this.onDismiss}>
-                    {this.state.artistName} added!
+                    {this.state.artistNameAlert} added!
                 </Alert>
             </FormGroup>
         </Form>
