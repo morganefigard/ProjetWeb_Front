@@ -1,0 +1,6 @@
+.ArtistsForm::before {
+    color: #aaa;
+    font-size: smaller;
+    font-weight: 500;
+    content: 'ADD AN ARTIST';
+}
