@@ -22,6 +22,7 @@ export default class ArtistsForm extends Component {
         if(this.state.artistNameValue != '') {
             this.setState({ artistNameAlert: this.state.artistNameValue });
             this.setState({ visible: true });
+            this.setState({ artistNameValue: '' });
         }
     }
 
