@@ -52,6 +52,9 @@ export default class Navbarsss extends Component {
                   <DropdownItem>
                     <Link to="/admin">Go to admin page</Link>
                   </DropdownItem>
+                  <DropdownItem>
+                    <Link to="/">Go to home page</Link>
+                  </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
