@@ -6,6 +6,7 @@ export default class ArtistsList extends Component {
   render() {
     return (
       <div className="ArtistsList">
+      <h5 className="artist-list-title">LIST OF ALL ARTISTS</h5>
         <Table striped>
         <thead>
           <tr>

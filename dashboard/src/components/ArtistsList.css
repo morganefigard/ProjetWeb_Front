@@ -1,5 +1,8 @@
-.ArtistsList::before {
+.artist-list-title {
     color: #aaa;
     font-weight: 500;
-    content: 'LIST OF ALL ARTISTS';
+}
+
+.ArtistsList {
+    margin-top: 10px;
 }
