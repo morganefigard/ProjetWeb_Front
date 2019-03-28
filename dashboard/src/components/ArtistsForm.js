@@ -10,6 +10,7 @@ export default class ArtistsForm extends Component {
             visible: false,
             artistNameValue: '',
             artistNameAlert: '', 
+            artistDateValue: '',
             artists: []
           };
       
@@ -46,6 +47,15 @@ export default class ArtistsForm extends Component {
         });
     }
 
+    updateDateValue(evt) {
+        evt.preventDefault();
+        if(evt.target.value != undefined) {
+            this.setState({
+                artistDateValue: evt.target.value
+            });
+        }
+    }
+
     render() {
     return (
       <div className="ArtistsForm">
@@ -56,7 +66,7 @@ export default class ArtistsForm extends Component {
             </FormGroup>
             <FormGroup>
                 <Label for="birth">Birth date</Label>
-                <Input type="date" name="birth" id="birth" />
+                <Input type="date" name="birth" id="birth" value={this.state.artistDateValue} onChange={(event) => this.setState({artistDateValue: event.target.value})} />
             </FormGroup>
             <FormGroup>
                 <Label for="followers">Number of followers</Label>
@@ -79,6 +89,7 @@ export default class ArtistsForm extends Component {
                 )
             })}
         </ul>
+        <p>Date entered: {this.state.artistDateValue}</p>
       </div>
     )
   }
