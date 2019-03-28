@@ -5,18 +5,18 @@ export default class ProgressBarsWidget extends Component {
   render() {
     return (
       <div className="ProgressBarsWidget">
-        <h4 class="graph-title">Most listened songs of Album A</h4>
-        <div class="table-responsive">
-            <table class="table table-hover">
+        <h4 className="graph-title">Most listened songs of Album A</h4>
+        <div className="table-responsive">
+            <table className="table table-hover">
             <tbody>
                 <tr>
                     <td style={{width: 26.66 + '%'}}>
                         Song A
                     </td>
                     <td>
-                        <div class="progress">
-                            <div class="progress-bar-custom" role="progressbar" style={{flex: 1}}>
-                                <p class="progress-bar-text">725</p>
+                        <div className="progress">
+                            <div className="progress-bar-custom" role="progressbar" style={{flex: 1}}>
+                                <p className="progress-bar-text">725</p>
                             </div>
                         </div>
                     </td>
@@ -26,9 +26,9 @@ export default class ProgressBarsWidget extends Component {
                         Song B
                     </td>
                     <td>
-                        <div class="progress">
-                            <div class="progress-bar-custom" role="progressbar" style={{flex: 0.83}}>
-                                <p class="progress-bar-text">602</p>
+                        <div className="progress">
+                            <div className="progress-bar-custom" role="progressbar" style={{flex: 0.83}}>
+                                <p className="progress-bar-text">602</p>
                             </div>
                         </div>
                     </td>
@@ -38,9 +38,9 @@ export default class ProgressBarsWidget extends Component {
                         Song C
                     </td>
                     <td>
-                        <div class="progress">
-                            <div class="progress-bar-custom" role="progressbar" style={{flex: 0.7}}>
-                                <p class="progress-bar-text">507</p>
+                        <div className="progress">
+                            <div className="progress-bar-custom" role="progressbar" style={{flex: 0.7}}>
+                                <p className="progress-bar-text">507</p>
                             </div>
                         </div>
                     </td>

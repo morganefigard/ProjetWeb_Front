@@ -9,7 +9,8 @@ export default class ArtistsForm extends Component {
         this.state = {
             visible: false,
             artistNameValue: '',
-            artistNameAlert: ''
+            artistNameAlert: '', 
+            artists: []
           };
       
         this.onDismiss = this.onDismiss.bind(this);
@@ -19,7 +20,8 @@ export default class ArtistsForm extends Component {
     }
 
     handleSubmit() {
-        if(this.state.artistNameValue != '') {
+        if(this.state.artistNameValue !== '') {
+            this.addArtist();
             this.setState({ artistNameAlert: this.state.artistNameValue });
             this.setState({ visible: true });
             this.setState({ artistNameValue: '' });
@@ -27,7 +29,10 @@ export default class ArtistsForm extends Component {
     }
 
     addArtist() {
-        console.log("Adding an artist");
+        console.log("Adding an artist to the artists array");
+        this.setState(prevState => ({
+            artists: [...prevState.artists, { "name": this.state.artistNameValue, "birthdate": "10/10/2010" }]
+          }))
     }
     
     onDismiss() {
@@ -35,6 +40,7 @@ export default class ArtistsForm extends Component {
     }
 
     updateNameValue(evt) {
+        evt.preventDefault();
         this.setState({
           artistNameValue: evt.target.value
         });
@@ -58,6 +64,7 @@ export default class ArtistsForm extends Component {
             </FormGroup>
             <FormGroup>
                 <Button onClick={this.handleSubmit}>Add an artist</Button>
+                {/*add other button to clear all fields*/}
             </FormGroup>
             <FormGroup>
                 <Alert color="success" isOpen={this.state.visible} toggle={this.onDismiss}>
@@ -65,6 +72,13 @@ export default class ArtistsForm extends Component {
                 </Alert>
             </FormGroup>
         </Form>
+        <ul>
+            {this.state.artists.map(function(artist, index){
+                return (
+                    <li key={index}>Name: {artist.name}, birthdate: {artist.birthdate}</li>
+                )
+            })}
+        </ul>
       </div>
     )
   }

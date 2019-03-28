@@ -7,7 +7,7 @@ export default class Stats extends Component {
   render() {
     return (
       <div className="Stats">
-        <h1 class="display-4">
+        <h1 className="display-4">
             <strong>250 275</strong><br />
         </h1>
         <p>Active users <FontAwesomeIcon icon={faUsers} /></p>
