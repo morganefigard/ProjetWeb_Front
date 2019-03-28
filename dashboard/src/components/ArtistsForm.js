@@ -18,6 +18,7 @@ export default class ArtistsForm extends Component {
         this.onDismiss = this.onDismiss.bind(this);
         this.addArtist = this.addArtist.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.clearSubmit = this.clearSubmit.bind(this);
         this.updateNameValue = this.updateNameValue.bind(this);
     }
 
@@ -30,6 +31,12 @@ export default class ArtistsForm extends Component {
             this.setState({ artistDateValue: '' });
             this.setState({ artistFollowersValue: 0 });
         }
+    }
+
+    clearSubmit() {
+        this.setState({ artistNameValue: '' });
+        this.setState({ artistDateValue: '' });
+        this.setState({ artistFollowersValue: 0 });
     }
 
     addArtist() {
@@ -68,7 +75,7 @@ export default class ArtistsForm extends Component {
             </FormGroup>
             <FormGroup>
                 <Button onClick={this.handleSubmit}>Add an artist</Button>
-                {/*add other button to clear all fields*/}
+                <Button color="link" size="sm" className="pull-right" onClick={this.clearSubmit}>Clear</Button>
             </FormGroup>
             <FormGroup>
                 <Alert color="success" isOpen={this.state.visible} toggle={this.onDismiss}>
