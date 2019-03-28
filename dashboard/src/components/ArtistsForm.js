@@ -27,6 +27,8 @@ export default class ArtistsForm extends Component {
             this.setState({ artistNameAlert: this.state.artistNameValue });
             this.setState({ visible: true });
             this.setState({ artistNameValue: '' });
+            this.setState({ artistDateValue: '' });
+            this.setState({ artistFollowersValue: 0 });
         }
     }
 
