@@ -33,7 +33,7 @@ export default class ArtistsForm extends Component {
     addArtist() {
         console.log("Adding an artist to the artists array");
         this.setState(prevState => ({
-            artists: [...prevState.artists, { "name": this.state.artistNameValue, "birthdate": "10/10/2010" }]
+            artists: [...prevState.artists, { "name": this.state.artistNameValue, "birthdate": this.state.artistDateValue, "followers": this.state.artistFollowersValue }]
           }))
     }
     
@@ -46,24 +46,6 @@ export default class ArtistsForm extends Component {
         this.setState({
           artistNameValue: evt.target.value
         });
-    }
-
-    updateDateValue(evt) {
-        evt.preventDefault();
-        if(evt.target.value != undefined) {
-            this.setState({
-                artistDateValue: evt.target.value
-            });
-        }
-    }
-
-    updateFollowersValue(evt) {
-        evt.preventDefault();
-        if(evt.target.value != undefined) {
-            this.setState({
-                artistFollowersValue: evt.target.value
-            });
-        }
     }
 
     render() {
@@ -95,12 +77,10 @@ export default class ArtistsForm extends Component {
         <ul>
             {this.state.artists.map(function(artist, index){
                 return (
-                    <li key={index}>Name: {artist.name}, birthdate: {artist.birthdate}</li>
+                    <li key={index}>Name: {artist.name}, birthdate: {artist.birthdate}, followers: {artist.followers}</li>
                 )
             })}
         </ul>
-        <p>Date entered: {this.state.artistDateValue}</p>
-        <p>Followers entered: {this.state.artistFollowersValue} </p>
       </div>
     )
   }
