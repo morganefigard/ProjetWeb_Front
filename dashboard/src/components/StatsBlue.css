@@ -1,0 +1,14 @@
+.StatsBlue {
+    background-color: #99e1d9;
+    color: #fcfcfc;
+    padding: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 15px;
+    height: 150px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
+}

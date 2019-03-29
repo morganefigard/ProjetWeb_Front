@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { Button } from '@storybook/react/demo';
 import 'bootstrap/dist/css/bootstrap.css';
 import Stats from '../components/Stats';
+import StatsCream from '../components/StatsCream';
+import StatsBlue from '../components/StatsBlue';
 import DateTime from '../components/DateTime';
 import WeatherLocation from '../components/WeatherLocation';
 import BarChartWidget from '../components/BarChartWidget';
@@ -21,6 +23,12 @@ storiesOf('Button', module)
 storiesOf('Small widgets', module)
   .add('Stats with icon', () => (
     <Stats></Stats>
+  ))
+  .add('Stats with icon, cream color', () => (
+    <StatsCream></StatsCream>
+  ))
+  .add('Stats with icon, blue color', () => (
+    <StatsBlue></StatsBlue>
   ))
   .add('Date and clock', () => (
     <DateTime></DateTime>
