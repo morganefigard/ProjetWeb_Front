@@ -1,16 +1,16 @@
 import './StatsCream.css';
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 export default class StatsCream extends Component {
   render() {
     return (
       <div className="StatsCream">
         <h1 className="display-4">
-            <strong>250 275</strong><br />
+            <strong><FontAwesomeIcon icon={faClock} /> 3:47</strong><br />
         </h1>
-        <p>Active users <FontAwesomeIcon icon={faUsers} /></p>
+        <p>Mean song time</p>
       </div>
     )
   }
