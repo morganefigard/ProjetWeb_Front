@@ -23,7 +23,7 @@ export default class BarChartWidget extends Component {
                 <Bar radius={[10, 10, 0, 0]} dataKey="likes" fill="#f75670">
                 {
                     data.map((entry, index) => (
-                    <Cell fill={colors[index]}/>
+                    <Cell fill={colors[index]} key={index}/>
                     ))
                 }
                 </Bar>

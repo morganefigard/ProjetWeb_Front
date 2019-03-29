@@ -7,7 +7,7 @@ export default class DateTime extends Component {
         super();
 
         var today = new Date();
-        var days = new Array();
+        var days = [];
         days[0] = "Sunday";
         days[1] = "Monday";
         days[2] = "Tuesday";
@@ -15,7 +15,7 @@ export default class DateTime extends Component {
         days[4] = "Thursday";
         days[5] = "Friday";
         days[6] = "Saturday";
-        var months = new Array();
+        var months = [];
         months[0] = "January";
         months[1] = "February";
         months[2] = "March";

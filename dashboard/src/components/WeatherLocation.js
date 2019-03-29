@@ -10,7 +10,7 @@ export default class WeatherLocation extends Component {
         this.state = {
             outside_temp: null,
             icon_id: null,
-            icon: null,
+            icon: "CLEAR_NIGHT",
             color: '#fcfcfc',
             size: 60,
             animate: true
@@ -60,6 +60,9 @@ export default class WeatherLocation extends Component {
                 case "50d":
                 case "50n":
                     icon = "FOG";
+                    break;
+                default:
+                    icon="CLEAR_DAY";
                     break;
             }
             console.log("Icon: " + icon);

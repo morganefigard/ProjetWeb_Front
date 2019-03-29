@@ -22,7 +22,7 @@ export default class PieChartWidget extends Component {
                 <Pie data={data} dataKey="songs" cx="50%" cy="40%" innerRadius={30} outerRadius={50} fill="#f75670" startAngle={90} endAngle={450} label >
                 {
                     data.map((entry, index) => (
-                    <Cell fill={colors[index]}/>
+                    <Cell fill={colors[index]} key={index}/>
                     ))
                 }
                 </Pie>
