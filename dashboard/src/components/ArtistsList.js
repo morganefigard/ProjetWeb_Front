@@ -1,8 +1,28 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 import './ArtistsList.css';
+import axios from 'axios';
 
 export default class ArtistsList extends Component {
+  constructor() {
+    super();
+    
+    this.state = {
+      artists: []
+    }
+  }
+
+  componentWillMount() {
+    axios.get("http://localhost:3030/artist").then(({ data }) => {
+      console.log(data);
+      for (var i=0; i<data.length; i++) {
+        this.setState(prevState => ({
+          artists: [...prevState.artists, { "name": data[i].name, "birthdate": data[i].birth, "followers": data[i].followers }]
+        }))
+      }
+    })
+  }
+
   render() {
     return (
       <div className="ArtistsList">
@@ -10,31 +30,21 @@ export default class ArtistsList extends Component {
         <Table striped>
         <thead>
           <tr>
-            <th>#</th>
             <th>Name</th>
             <th>Birth date</th>
             <th>Number of followers</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Artist 1</td>
-            <td>01/01/1900</td>
-            <td>500</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Artist 2</td>
-            <td>01/01/1900</td>
-            <td>500</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Artist 3</td>
-            <td>01/01/1900</td>
-            <td>500</td>
-          </tr>
+          {this.state.artists.map(function(artist, index){
+                return (
+                  <tr key={index}>
+                    <td>{artist.name}</td>
+                    <td>{artist.birthdate}</td>
+                    <td>{artist.followers}</td>
+                  </tr>
+                )
+            })}
         </tbody>
       </Table>
       </div>
