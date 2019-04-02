@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Label, Input, Button, Alert } from 'reactstrap';
-import './ArtistsForm.css'
+import './ArtistsForm.css';
+import axios from 'axios';
 
 export default class ArtistsForm extends Component {
     constructor() {
@@ -10,13 +11,14 @@ export default class ArtistsForm extends Component {
             visible: false,
             artistNameValue: '',
             artistNameAlert: '', 
-            artistDateValue: '',
+            artistDateValue: new Date(1970, 0, 1),
             artistFollowersValue: 0,
             artists: []
           };
       
         this.onDismiss = this.onDismiss.bind(this);
         this.addArtist = this.addArtist.bind(this);
+        this.addArtistToDB = this.addArtistToDB.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearSubmit = this.clearSubmit.bind(this);
         this.updateNameValue = this.updateNameValue.bind(this);
@@ -24,6 +26,7 @@ export default class ArtistsForm extends Component {
 
     handleSubmit() {
         if(this.state.artistNameValue !== '') {
+            this.addArtistToDB();
             this.addArtist();
             this.setState({ artistNameAlert: this.state.artistNameValue });
             this.setState({ visible: true });
@@ -44,6 +47,10 @@ export default class ArtistsForm extends Component {
         this.setState(prevState => ({
             artists: [...prevState.artists, { "name": this.state.artistNameValue, "birthdate": this.state.artistDateValue, "followers": this.state.artistFollowersValue }]
           }))
+    }
+
+    addArtistToDB() {
+        axios.put("http://localhost:3030/artist", { "name": this.state.artistNameValue, "birth": this.state.artistDateValue, "followers": this.state.artistFollowersValue });
     }
     
     onDismiss() {
