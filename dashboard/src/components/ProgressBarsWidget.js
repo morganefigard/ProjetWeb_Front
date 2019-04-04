@@ -2,14 +2,21 @@ import './ProgressBarsWidget.css';
 import React, { Component } from 'react';
 import axios from 'axios';
 
-let dataFromDB = [];
-
 export default class ProgressBarsWidget extends Component {
+  constructor() {
+    super();
+    
+    this.state = {
+      dataFromDB: []
+    }
+  }
   componentWillMount() {
     axios.get("http://localhost:3030/artist/topFollowers").then(({ data }) => {
       console.log(data);
       for (var i=0; i<data.length; i++) {
-        dataFromDB.push({"name": data[i].name, "followers": data[i].followers});
+        this.setState(prevState => ({
+          dataFromDB: [...prevState.dataFromDB, { "name": data[i].name, "followers": data[i].followers }]
+        }))
       }
     })
   }
@@ -21,7 +28,7 @@ export default class ProgressBarsWidget extends Component {
         <div className="table-responsive">
             <table className="table table-hover">
             <tbody>
-                {dataFromDB.map(function(entry, index){
+                {this.state.dataFromDB.map(function(entry, index){
                     return (
                         <tr key={index}>
                             <td style={{width: 16.66 + '%'}}>
@@ -37,18 +44,6 @@ export default class ProgressBarsWidget extends Component {
                         </tr>
                     )
                 })}
-                <tr>
-                    <td style={{width: 16.66 + '%'}}>
-                        Artist A
-                    </td>
-                    <td>
-                        <div className="progress">
-                            <div className="progress-bar-custom" role="progressbar" style={{flex: 0.7}}>
-                                <p className="progress-bar-text">178</p>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
                 </tbody>
             </table>
         </div>
