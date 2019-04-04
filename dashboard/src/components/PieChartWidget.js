@@ -13,7 +13,7 @@ import axios from 'axios';
 
 //let dataFromDB = [];
 
-const colors = ['#99e1d9', '#f75670', '#99e1d9', '#f75670', '#5d576b'];
+const colors = ['#99e1d9', '#f75670', '#5d576b', '#D1CDBA', '#5d576b'];
 
 export default class PieChartWidget extends Component {
   constructor() {

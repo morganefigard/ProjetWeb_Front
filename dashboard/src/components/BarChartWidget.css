@@ -1,15 +1,13 @@
 .BarChartWidget {
     background-color: #fcfcfc;
     padding: 15px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
     border-radius: 15px;
     height: 450px;
     width: 100%;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    box-shadow: 1px 1px 5px 1px #aaaaaa;
 }
 
 .graph-title {

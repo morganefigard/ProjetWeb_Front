@@ -2,9 +2,7 @@
     background-color: #fffae3;
     color: #5d576b;
     padding: 15px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
+    box-shadow: 1px 1px 5px 1px #aaaaaa;
     border-radius: 15px;
     height: 150px;
     width: 100%;
