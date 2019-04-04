@@ -90,13 +90,6 @@ export default class ArtistsForm extends Component {
                 </Alert>
             </FormGroup>
         </Form>
-        <ul>
-            {this.state.artists.map(function(artist, index){
-                return (
-                    <li key={index}>Name: {artist.name}, birthdate: {artist.birthdate}, followers: {artist.followers}</li>
-                )
-            })}
-        </ul>
       </div>
     )
   }

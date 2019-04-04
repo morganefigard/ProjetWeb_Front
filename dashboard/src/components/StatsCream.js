@@ -10,16 +10,22 @@ export default class StatsCream extends Component {
     super();
     
     this.state = {
-      meanDuration: 0
+      meanDurationData: 0, 
+      meanDurationMinutes: 0,
+      meanDurationSeconds: 0, 
+      meanDurationMinutesSeconds: "", 
     }
   }
 
   componentWillMount() {
     axios.get("http://localhost:3030/track/avgTime").then(({ data }) => {
-      console.log(data);
-      console.log(data.total);
-      console.log(data[0].total);
-      this.setState({meanDuration : data[0].total});
+      this.setState({meanDurationData: data[0].total});
+      console.log("meanDurationData=" + this.state.meanDurationData);
+      this.setState({ meanDurationMinutes: Math.floor(this.state.meanDurationData / 60) });
+      console.log("meanDurationMinutes=" + this.state.meanDurationMinutes);
+      this.setState({ meanDurationSeconds: this.state.meanDurationData - this.state.meanDurationMinutes * 60 });
+      console.log("meanDurationSeconds=" + this.state.meanDurationSeconds);
+      this.setState({ meanDurationMinutesSeconds: this.state.meanDurationMinutes + "'" + this.state.meanDurationSeconds + "''" });
     });
   }
 
@@ -27,7 +33,7 @@ export default class StatsCream extends Component {
     return (
       <div className="StatsCream">
         <h1 className="display-4">
-            <strong><FontAwesomeIcon icon={faClock} /> {this.state.meanDuration}s</strong><br />
+            <strong><FontAwesomeIcon icon={faClock} /> {this.state.meanDurationMinutesSeconds}</strong><br />
         </h1>
         <p>Mean song time</p>
       </div>
