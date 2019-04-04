@@ -13,7 +13,7 @@ export default class ArtistsList extends Component {
   }
 
   componentWillMount() {
-    axios.get("http://localhost:3030/artist").then(({ data }) => {
+    axios.get("http://localhost:3030/artist/sorted").then(({ data }) => {
       console.log(data);
       for (var i=0; i<data.length; i++) {
         this.setState(prevState => ({
