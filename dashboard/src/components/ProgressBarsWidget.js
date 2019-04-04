@@ -7,15 +7,19 @@ export default class ProgressBarsWidget extends Component {
     super();
     
     this.state = {
-      dataFromDB: []
+      dataFromDB: [], 
+      topNumFollowers: 0
     }
   }
+
   componentWillMount() {
     axios.get("http://localhost:3030/artist/topFollowers").then(({ data }) => {
       console.log(data);
+      this.setState({topNumFollowers: data[0].followers});
+      console.log(this.state.topNumFollowers);
       for (var i=0; i<data.length; i++) {
         this.setState(prevState => ({
-          dataFromDB: [...prevState.dataFromDB, { "name": data[i].name, "followers": data[i].followers }]
+          dataFromDB: [...prevState.dataFromDB, { "name": data[i].name, "followers": data[i].followers, "percFollow": data[i].followers/this.state.topNumFollowers }]
         }))
       }
     })
@@ -36,7 +40,7 @@ export default class ProgressBarsWidget extends Component {
                             </td>
                             <td>
                                 <div className="progress">
-                                    <div className="progress-bar-custom" role="progressbar" style={{flex: 0.7}}>
+                                    <div className="progress-bar-custom" role="progressbar" style={{flex: entry.percFollow}}>
                                         <p className="progress-bar-text">{entry.followers}</p>
                                     </div>
                                 </div>
