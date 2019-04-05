@@ -18,9 +18,6 @@ export default class Stats extends Component {
 
   componentWillMount() {
     axios.get("http://localhost:3030/track/listeningCount").then(({ data }) => {
-      console.log(data);
-      console.log(data.total);
-      console.log(data[0].total);
       this.setState({totalNumberOfListenings : data[0].total});
     });
   }

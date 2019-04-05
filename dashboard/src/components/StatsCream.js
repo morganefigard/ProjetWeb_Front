@@ -20,11 +20,8 @@ export default class StatsCream extends Component {
   componentWillMount() {
     axios.get("http://localhost:3030/track/avgTime").then(({ data }) => {
       this.setState({meanDurationData: data[0].total});
-      console.log("meanDurationData=" + this.state.meanDurationData);
       this.setState({ meanDurationMinutes: Math.floor(this.state.meanDurationData / 60) });
-      console.log("meanDurationMinutes=" + this.state.meanDurationMinutes);
       this.setState({ meanDurationSeconds: this.state.meanDurationData - this.state.meanDurationMinutes * 60 });
-      console.log("meanDurationSeconds=" + this.state.meanDurationSeconds);
       this.setState({ meanDurationMinutesSeconds: this.state.meanDurationMinutes + "'" + this.state.meanDurationSeconds + "''" });
     });
   }

@@ -37,7 +37,6 @@ export default class ArtistsList extends Component {
 
   componentWillMount() {
     axios.get("http://localhost:3030/artist/sorted").then(({ data }) => {
-      console.log(data);
       for (var i=0; i<data.length; i++) {
         this.setState(prevState => ({
           artists: [...prevState.artists, { "name": data[i].name, "birthdate": data[i].birth, "followers": data[i].followers }]
@@ -49,7 +48,6 @@ export default class ArtistsList extends Component {
   refreshList() {
     this.setState({artists: []});
     axios.get("http://localhost:3030/artist/sorted").then(({ data }) => {
-      console.log(data);
       for (var i=0; i<data.length; i++) {
         this.setState(prevState => ({
           artists: [...prevState.artists, { "name": data[i].name, "birthdate": data[i].birth, "followers": data[i].followers }]

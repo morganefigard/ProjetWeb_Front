@@ -43,7 +43,6 @@ export default class ArtistsForm extends Component {
     }
 
     addArtist() {
-        console.log("Adding an artist to the artists array");
         this.setState(prevState => ({
             artists: [...prevState.artists, { "name": this.state.artistNameValue, "birthdate": this.state.artistDateValue, "followers": this.state.artistFollowersValue }]
           }))

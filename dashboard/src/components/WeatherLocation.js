@@ -21,10 +21,8 @@ export default class WeatherLocation extends Component {
         axios.get("https://api.openweathermap.org/data/2.5/weather?q=paris&appid=f0ac9e6079908391d506e2da07a50c18").then(({ data }) => {
             var outside_temp = data.main.temp - 273.15; //get the temperature in degrees celcius
             outside_temp = Math.round(outside_temp);
-            console.log(data);
 
             var icon_id = data.weather[0].icon;
-            console.log("Icon id: " + icon_id);
             var icon = "";
             switch(icon_id) {
                 case "01d":
@@ -65,7 +63,6 @@ export default class WeatherLocation extends Component {
                     icon="CLEAR_DAY";
                     break;
             }
-            console.log("Icon: " + icon);
             this.setState({ outside_temp });
             this.setState({ icon_id });
             this.setState({ icon });
