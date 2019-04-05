@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table } from 'reactstrap';
+import { Table, Button } from 'reactstrap';
 import './ArtistsList.css';
 import axios from 'axios';
 
@@ -10,6 +10,8 @@ export default class ArtistsList extends Component {
     this.state = {
       artists: []
     }
+
+    this.refreshList = this.refreshList.bind(this);
   }
 
   componentWillMount() {
@@ -23,10 +25,22 @@ export default class ArtistsList extends Component {
     })
   }
 
+  refreshList() {
+    this.setState({artists: []});
+    axios.get("http://localhost:3030/artist/sorted").then(({ data }) => {
+      console.log(data);
+      for (var i=0; i<data.length; i++) {
+        this.setState(prevState => ({
+          artists: [...prevState.artists, { "name": data[i].name, "birthdate": data[i].birth, "followers": data[i].followers }]
+        }))
+      }
+    })
+  }
+
   render() {
     return (
       <div className="ArtistsList">
-      <h5 className="artist-list-title">LIST OF ALL ARTISTS</h5>
+      <h5 className="artist-list-title">LIST OF ALL ARTISTS <Button onClick={this.refreshList} outline color="secondary" className="littleMarginLeft">Update</Button></h5>
         <Table striped>
         <thead>
           <tr>

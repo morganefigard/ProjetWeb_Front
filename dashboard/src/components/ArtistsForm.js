@@ -82,7 +82,7 @@ export default class ArtistsForm extends Component {
             </FormGroup>
             <FormGroup>
                 <Button onClick={this.handleSubmit}>Add an artist</Button>
-                <Button color="link" size="sm" className="pull-right" onClick={this.clearSubmit}>Clear</Button>
+                <Button color="link" size="sm" className="floatRight" onClick={this.clearSubmit}>Clear form</Button>
             </FormGroup>
             <FormGroup>
                 <Alert color="success" isOpen={this.state.visible} toggle={this.onDismiss}>
