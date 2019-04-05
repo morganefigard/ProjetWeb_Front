@@ -2,13 +2,34 @@ import React, { Component } from 'react';
 import { Table, Button } from 'reactstrap';
 import './ArtistsList.css';
 import axios from 'axios';
+import { MDBDataTable } from 'mdbreact';
 
 export default class ArtistsList extends Component {
   constructor() {
     super();
     
     this.state = {
-      artists: []
+      artists: [], 
+      columns: [
+        {
+          label: 'Name ▴▾',
+          field: 'name',
+          sort: 'asc',
+          width: 150
+        },
+        {
+          label: 'Date of birth ▴▾',
+          field: 'birthdate',
+          sort: 'asc',
+          width: 150
+        },
+        {
+          label: 'Number of followers ▴▾',
+          field: 'followers',
+          sort: 'asc',
+          width: 150
+        },
+      ]
     }
 
     this.refreshList = this.refreshList.bind(this);
@@ -20,7 +41,7 @@ export default class ArtistsList extends Component {
       for (var i=0; i<data.length; i++) {
         this.setState(prevState => ({
           artists: [...prevState.artists, { "name": data[i].name, "birthdate": data[i].birth, "followers": data[i].followers }]
-        }))
+        }));
       }
     })
   }
@@ -41,26 +62,12 @@ export default class ArtistsList extends Component {
     return (
       <div className="ArtistsList">
       <h5 className="artist-list-title">LIST OF ALL ARTISTS <Button onClick={this.refreshList} outline color="secondary" className="littleMarginLeft">Update</Button></h5>
-        <Table striped>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Birth date</th>
-            <th>Number of followers</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.state.artists.map(function(artist, index){
-                return (
-                  <tr key={index}>
-                    <td>{artist.name}</td>
-                    <td>{artist.birthdate}</td>
-                    <td>{artist.followers}</td>
-                  </tr>
-                )
-            })}
-        </tbody>
-      </Table>
+          <MDBDataTable
+          striped
+          bordered
+          hover
+          data={{"columns": this.state.columns, "rows": this.state.artists}}
+        />
       </div>
     )
   }
