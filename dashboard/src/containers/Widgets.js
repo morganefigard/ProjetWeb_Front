@@ -15,7 +15,7 @@ export default class Widgets extends Component {
     return (
       <div className="Widgets">
         <Row>
-          <Col lg="8" sm="8">
+          <Col lg="8" sm="12">
             <Row>
               <Col lg="4" sm="4">
                 <Stats></Stats>
@@ -31,7 +31,7 @@ export default class Widgets extends Component {
               </Col>
             </Row>
           </Col>
-          <Col lg="4" sm="4">
+          <Col lg="4" sm="12">
             <Row>
               <Col lg="12" sm="12">
                 <ProgressBarsWidget></ProgressBarsWidget>
